@@ -34,6 +34,10 @@ function Nav() {
             <Link className="navLink" to='/flowerlist'>
               Flower List!
             </Link>
+            <Link className="navLink" to='/userlist'>
+              Digital Bouquet!
+            </Link>
+
             <LogOutButton className="navLink" />
           </>
         )}

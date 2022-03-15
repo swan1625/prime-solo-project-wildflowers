@@ -20,6 +20,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import FlowerList from '../FlowerList/FlowerList'
+import UserList from '../UserList/UserList'
 
 import './App.css';
 
@@ -68,6 +69,12 @@ function App() {
             exact path= "/flowerlist"
             >
             <FlowerList />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact path= "/userlist"
+            >
+            <UserList />
           </ProtectedRoute>
 
           <ProtectedRoute

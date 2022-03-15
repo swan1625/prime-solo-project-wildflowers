@@ -2,8 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 
-
-function flowerList(){
+function UserList(){
 
     const dispatch = useDispatch();
 
@@ -11,10 +10,10 @@ function flowerList(){
     return (
 
         <>
-        we really out here DOING THE DAMN THING
+        we really out here in the digital bouqet 
         
         </>
     )
 }
 
-export default flowerList; 
+export default UserList; 
