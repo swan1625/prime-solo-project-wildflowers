@@ -20,7 +20,7 @@ function submitForm() {
         dispatch({type: 'ADD_USER_FLOWER', payload:{ imagePath, notes, city } });
     
       }
-
+console.log('city is', city);
     return (
         <>
         
