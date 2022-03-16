@@ -25,12 +25,13 @@ const cloudinaryUpload = require('../modules/cloudinary-config');
   // if (req.isAuthenticated()) {
     console.log('niceeee req.file:', req.file.path)
     console.log('server post description', req.body.notes);
+    console.log('nearest city is', req.body.city);
     console.log('username', req.user.id);
 
 
-    let queryText = `INSERT INTO "userFlowerList" ( "notes", "uploaded_image", "user_id") 
-    VALUES ($1, $2, $3);`;
-    pool.query(queryText,  [ req.body.description, req.file.path, req.user.id])
+    let queryText = `INSERT INTO "userFlowerList" ( "notes", "uploaded_image", "user_id", "flower_id", "nearest_city") 
+    VALUES ($1, $2, $3, $4, $5);`;
+    pool.query(queryText,  [ req.body.notes, req.file.path, req.user.id, 1, req.body.city])
       .then(dbRes => res.sendStatus(201))
       .catch(err => { 
         console.log('erroris', err);
