@@ -1,22 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
+import { useHistory } from 'react-router-dom';
 
 function flowerListItem({item}) {
-
+    console.log('item id is', item.id);
 
 
     const dispatch = useDispatch();
+    const history = useHistory();
+    function handleClick(item) {
+        //sending information to be displayed in details page  
+        dispatch({ type: 'SET_SELECTED_FLOWER', payload: item })
+        console.log('flower ID is ', item.id);
+        history.push(`/details/${item.id}`);
+      }
 
-    // const handleDelete = () => {
-    //     dispatch({type: 'DELETE_ITEM', payload: item.id });
-    // }
 
+console.log('item is', item);
     return (
-        <div className='flowerItemContainer'>
+        <div className='flowerItemContainer' key={item.id} onClick={() => handleClick(item)} >
             <h3>{item.common_name}</h3>
             <img src ={item.image_path} />
-            {/* <button onClick={handleDelete}>delete</button> */}
         </div>
     )
 }

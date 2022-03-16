@@ -6,7 +6,6 @@ const router = express.Router();
  * GET route template
  */
  router.get('/', (req, res) => {
- 
   console.log('/flowers GET route');
   console.log('is authenticated?', req.isAuthenticated());
   console.log('user', req.user);

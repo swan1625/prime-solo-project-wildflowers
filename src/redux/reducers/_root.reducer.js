@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import errors from './errors.reducer';
 import user from './user.reducer';
 import flowerList from './flowerlist.reducer'
+import selectedFlower from './flowerlistdetail.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -12,7 +13,8 @@ import flowerList from './flowerlist.reducer'
 const rootReducer = combineReducers({
   errors, // contains registrationMessage and loginMessage
   user, // will have an id and username if someone is logged in
-  flowerList // total list of flowers 
+  flowerList, // total list of flowers 
+  selectedFlower, // selected flower in total list 
 });
 
 export default rootReducer;

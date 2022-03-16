@@ -21,6 +21,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import FlowerList from '../FlowerList/FlowerList'
 import UserList from '../UserList/UserList'
+import Details from '../Details/Details'
 
 import './App.css';
 
@@ -70,6 +71,12 @@ function App() {
             >
             <FlowerList />
           </ProtectedRoute>
+          <ProtectedRoute path="/details/:id">
+          <Details />
+        {/* Add Movie page */}
+
+        
+        </ProtectedRoute>
 
           <ProtectedRoute
             exact path= "/userlist"

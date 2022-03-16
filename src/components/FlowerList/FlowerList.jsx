@@ -18,7 +18,6 @@ console.log(flowers);
     return (
 
         <div>
-        we really out here DOING THE DAMN THING
         {flowers.map((item, i) => {
                 return (
                     <FlowerListItem key={i} item={item} />
