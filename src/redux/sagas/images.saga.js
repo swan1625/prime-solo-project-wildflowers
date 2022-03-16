@@ -13,6 +13,7 @@ function* uploadImage(action) {
     imageForm.append('image', action.payload.imagePath);
     imageForm.append('notes', action.payload.notes);
     imageForm.append('city', action.payload.city)
+    imageForm.append('flowerID', action.payload.flowerid)
   
     const response = yield axios({
       method: 'POST',
@@ -24,7 +25,6 @@ function* uploadImage(action) {
     //   type: 'FETCH_IMAGES'
     // })
   }
-
 
 function* imagesSaga() {
     // yield takeLatest('FETCH_IMAGES', fetchImages);

@@ -27,11 +27,12 @@ const cloudinaryUpload = require('../modules/cloudinary-config');
     console.log('server post description', req.body.notes);
     console.log('nearest city is', req.body.city);
     console.log('username', req.user.id);
+    console.log('flower id is ', req.body.flowerID);
 
 
     let queryText = `INSERT INTO "userFlowerList" ( "notes", "uploaded_image", "user_id", "flower_id", "nearest_city") 
     VALUES ($1, $2, $3, $4, $5);`;
-    pool.query(queryText,  [ req.body.notes, req.file.path, req.user.id, 1, req.body.city])
+    pool.query(queryText,  [ req.body.notes, req.file.path, req.user.id, req.body.flowerID, req.body.city])
       .then(dbRes => res.sendStatus(201))
       .catch(err => { 
         console.log('erroris', err);

@@ -10,17 +10,37 @@ function submitForm() {
     const [city, setCity] = useState('');
     const [notes, setNotes] = useState('');
     const [imagePath, setImagePath] = useState('');
+    const [flowerid, setFlowerid] = useState('');
+
+
+    const selectedFlower = useSelector(store => store.selectedFlower);
+    let flowerIds = selectedFlower.id; 
 
     const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(imagePath.name);
+        let flowerid = selectedFlower.id;
+        console.log('flower id is handle sub', flowerid);
     
-        dispatch({type: 'ADD_USER_FLOWER', payload:{ imagePath, notes, city } });
+        dispatch({type: 'ADD_USER_FLOWER', payload:{ imagePath, notes, city, flowerid } });
     
       }
+
+    const setFlowerId = (e) => {
+      setFlowerid(selectedFlower.id)
+
+
+    }
+
+      useEffect(() => {
+        // on page load, fetch these things
+       setFlowerid();
+    }, []);
+
 console.log('city is', city);
+console.log('flowerid is ', selectedFlower.id);
     return (
         <>
         
