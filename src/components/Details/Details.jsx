@@ -10,6 +10,21 @@ function detailsPage(){
     const dispatch = useDispatch();
 
 
+    const history = useHistory();
+    function handleClick() {
+        console.log('clicking back to list');
+        // move back to movie list on click
+        history.push('/flowerlist')
+
+    }
+
+    function handleMatchClick() {
+        console.log('match button');
+        history.push('/submit')
+    }
+
+
+
     useEffect(() => {
         // 
         dispatch({ type: 'FETCH_SELECT_FLOWER', payload: selectedFlower.id })
@@ -25,8 +40,8 @@ function detailsPage(){
         <p> {selectedFlower.flower_size} </p>
         <p> {selectedFlower.genus} </p>
         <p> {selectedFlower.life_cycle}</p>
-
-
+        <button onClick = {handleClick}> Back to Complete List </button>
+        <button onClick = {handleMatchClick}> Think you have a Match? </button>
         
         </>
     )

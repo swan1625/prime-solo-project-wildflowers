@@ -22,6 +22,7 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import FlowerList from '../FlowerList/FlowerList'
 import UserList from '../UserList/UserList'
 import Details from '../Details/Details'
+import SubmitForm from '../SubmitForm/SubmitForm'
 
 import './App.css';
 
@@ -67,20 +68,28 @@ function App() {
           </ProtectedRoute>
 
           <ProtectedRoute
-            exact path= "/flowerlist"
-            >
+            exact path="/flowerlist"
+          >
             <FlowerList />
           </ProtectedRoute>
-          <ProtectedRoute path="/details/:id">
-          <Details />
-        {/* Add Movie page */}
-
-        
-        </ProtectedRoute>
 
           <ProtectedRoute
-            exact path= "/userlist"
-            >
+           path="/details/:id"
+           >
+            <Details />
+
+          </ProtectedRoute>
+
+          <ProtectedRoute
+           path="/submit"
+           >
+            <SubmitForm />
+
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact path="/userlist"
+          >
             <UserList />
           </ProtectedRoute>
 
