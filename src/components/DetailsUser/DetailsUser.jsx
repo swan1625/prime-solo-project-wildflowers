@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 
 function userDetailsPage({item}){
@@ -12,8 +13,28 @@ function userDetailsPage({item}){
     const history = useHistory();
 
     const handleDelete = () => {
-        dispatch({type: 'DELETE_ITEM', payload: selectedFlower.id });
-        console.log('delete button clicked');
+        // Swal('what up')
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+                
+              )
+              dispatch({type: 'DELETE_ITEM', payload: selectedFlower.id });
+              console.log('delete button clicked');
+            }
+          })
+
     }
 
     const handleEdit = () => {
