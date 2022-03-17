@@ -1,13 +1,41 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import React, { useEffect, useState } from 'react';
+
+
+// -------------Material UI Imports--------------
+import { Button, Typography } from '@mui/material';
+import Modal from '@mui/material/Modal';
+import { Box } from '@mui/system';
+import { TextField } from '@mui/material';
+import { Grid } from '@mui/material';
+
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 200,
+    bgcolor: '#EBDEF0',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+  };
+
+
+
 
 
 function userDetailsPage({item}){
 
     const selectedFlower = useSelector(store => store.userSelectedFlower);
     const dispatch = useDispatch();
+
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
 
 
     const history = useHistory();
@@ -54,8 +82,28 @@ function userDetailsPage({item}){
         <p> Notes: {selectedFlower.notes}    </p>
         <p> Nearest City: {selectedFlower.nearest_city}  </p>
         <img src={selectedFlower.uploaded_image} />
-        <button onClick={handleDelete}> Delete from Bouquet </button>
-        <button onClick={handleEdit}>Edit Notes</button>
+        {/* <button onClick={handleDelete}> Delete from Bouquet </button> */}
+        <Button color="error"  variant="contained" onClick={handleDelete}>Delete from Bouquet </Button>
+        {/* <button onClick={handleEdit}>Edit Notes</button> */}
+        <Button variant="contained" onClick={handleOpen}>Edit Notes</Button>
+
+        <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+        >
+    
+        <Box sx={style}>
+        <Typography id="modal-modal-title" variant="h6" component="h2">
+            Edit Your Notes
+          </Typography>
+            <TextField />
+            <Button> Submit Change </Button>
+            <Button> Cancel </Button>
+        </Box>
+   
+        </Modal>
         </>
     )
 }
