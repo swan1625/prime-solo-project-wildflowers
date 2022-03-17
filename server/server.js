@@ -11,6 +11,7 @@ const passport = require('./strategies/user.strategy');
 const userRouter = require('./routes/user.router');
 const flowerList = require('./routes/template.router');
 const userList = require('./routes/userlist.router')
+const deleteRouter = require('./routes/delete.router')
 // Body parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -26,6 +27,7 @@ app.use(passport.session());
 app.use('/api/user', userRouter);
 app.use('/flowers', flowerList);
 app.use('/userlist', userList);
+app.use('/delete', deleteRouter);
 // Serve static files
 app.use(express.static('build'));
 

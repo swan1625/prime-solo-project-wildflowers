@@ -33,13 +33,13 @@ function detailsPage(){
     return(
 
         <>
-        <p> {selectedFlower.common_name} </p>
+        <p> <b>{selectedFlower.common_name} </b> </p>
         <img src={selectedFlower.image_path} />
-        <p>{selectedFlower.scientific_name} </p>
-        <p> {selectedFlower.color} </p>
-        <p> {selectedFlower.flower_size} </p>
-        <p> {selectedFlower.genus} </p>
-        <p> {selectedFlower.life_cycle}</p>
+        <p> Scientific Name: {selectedFlower.scientific_name} </p>
+        <p> Color: {selectedFlower.color} </p>
+        <p> Height: {selectedFlower.flower_size} </p>
+        <p> Genus: {selectedFlower.genus} </p>
+        <p> Life Cycle: {selectedFlower.life_cycle}</p>
         <button onClick = {handleClick}> Back to Complete List </button>
         <button onClick = {handleMatchClick}> Think you have a Match? </button>
         
