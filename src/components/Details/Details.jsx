@@ -8,9 +8,9 @@ function detailsPage(){
     const selectedFlower = useSelector(store => store.selectedFlower);
 
     const dispatch = useDispatch();
-
-
     const history = useHistory();
+
+
     function handleClick() {
         console.log('clicking back to list');
         // move back to movie list on click

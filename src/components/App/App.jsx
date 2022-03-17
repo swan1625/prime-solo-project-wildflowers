@@ -23,6 +23,10 @@ import FlowerList from '../FlowerList/FlowerList'
 import UserList from '../UserList/UserList'
 import Details from '../Details/Details'
 import SubmitForm from '../SubmitForm/SubmitForm'
+import UserDetails from '../DetailsUser/DetailsUser'
+
+
+
 
 import './App.css';
 
@@ -78,6 +82,12 @@ function App() {
            >
             <Details />
 
+          </ProtectedRoute>
+          <ProtectedRoute
+           path="/detailsboquet/:id"
+           >
+          
+            <UserDetails />
           </ProtectedRoute>
 
           <ProtectedRoute
