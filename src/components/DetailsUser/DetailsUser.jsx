@@ -21,17 +21,18 @@ function userDetailsPage({item}){
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+            confirmButtonText: 'goodbye sweet flower =('
           }).then((result) => {
             if (result.isConfirmed) {
               Swal.fire(
                 'Deleted!',
-                'Your file has been deleted.',
+                'Your flower has been deleted',
                 'success'
                 
               )
               dispatch({type: 'DELETE_ITEM', payload: selectedFlower.id });
               console.log('delete button clicked');
+              history.push('/userlist')
             }
           })
 
