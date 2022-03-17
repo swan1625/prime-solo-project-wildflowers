@@ -7,9 +7,9 @@ function userDetailsPage({item}){
 
     const selectedFlower = useSelector(store => store.userSelectedFlower);
     const dispatch = useDispatch();
+
+
     const history = useHistory();
-
-
 
     const handleDelete = () => {
         dispatch({type: 'DELETE_ITEM', payload: selectedFlower.id });
@@ -32,7 +32,7 @@ function userDetailsPage({item}){
         <p> Notes: {selectedFlower.notes}    </p>
         <p> Nearest City: {selectedFlower.nearest_city}  </p>
         <img src={selectedFlower.uploaded_image} />
-        <button onClick={handleDelete}> Delete from Boquet </button>
+        <button onClick={handleDelete}> Delete from Bouquet </button>
         <button onClick={handleEdit}>Edit Notes</button>
         </>
     )

@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { useHistory } from 'react-router-dom';
 
 
 
@@ -11,6 +12,9 @@ function submitForm() {
     const [notes, setNotes] = useState('');
     const [imagePath, setImagePath] = useState('');
     const [flowerid, setFlowerid] = useState('');
+
+    const history = useHistory();
+
 
 
     const selectedFlower = useSelector(store => store.selectedFlower);
@@ -25,17 +29,15 @@ function submitForm() {
         console.log('flower id is handle sub', flowerid);
     
         dispatch({type: 'ADD_USER_FLOWER', payload:{ imagePath, notes, city, flowerid } });
+        history.push(`/submitconfirm`);
     
       }
 
     const setFlowerId = (e) => {
       setFlowerid(selectedFlower.id)
-
-
     }
-
       useEffect(() => {
-        // on page load, fetch these things
+        // on page load run setFlowerID 
        setFlowerid();
     }, []);
 
@@ -62,7 +64,7 @@ console.log('flowerid is ', selectedFlower.id);
           onChange={(event) => setImagePath(event.target.files[0])}
         />
 
-        <button type="submit">Add to shelf!</button>
+        <button type="submit">Add to Bouquet!</button>
       </form>
 
 

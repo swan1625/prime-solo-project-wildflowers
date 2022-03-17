@@ -24,6 +24,7 @@ import UserList from '../UserList/UserList'
 import Details from '../Details/Details'
 import SubmitForm from '../SubmitForm/SubmitForm'
 import UserDetails from '../DetailsUser/DetailsUser'
+import SubmitConfirm from '../SubmitConfirmation/SubmitConfirmation'
 
 
 
@@ -94,6 +95,12 @@ function App() {
            path="/submit"
            >
             <SubmitForm />
+
+          </ProtectedRoute>
+          <ProtectedRoute
+           path="/submitconfirm"
+           >
+            <SubmitConfirm />
 
           </ProtectedRoute>
 

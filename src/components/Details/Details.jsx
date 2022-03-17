@@ -15,7 +15,6 @@ function detailsPage(){
         console.log('clicking back to list');
         // move back to movie list on click
         history.push('/flowerlist')
-
     }
 
     function handleMatchClick() {
