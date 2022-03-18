@@ -6,6 +6,7 @@ import flowerSaga from './flowerlist.saga';
 import imagesSaga from './images.saga';
 import userFlowerSaga from './userflowerlist.saga'
 import deleteItemSaga from './delete.saga'
+import fetchSelectedName from './getname.saga';
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
 // This is imported in index.js as rootSaga
@@ -22,5 +23,6 @@ export default function* rootSaga() {
     imagesSaga(),
     userFlowerSaga(),
     deleteItemSaga(),
+    fetchSelectedName()
   ]);
 }

@@ -8,14 +8,18 @@ function UserList(){
 
     const dispatch = useDispatch();
     const flowers = useSelector(store => store.userImages);
+    // const selectedFlower = useSelector(store => store.getName)
 
     useEffect(() => {
         // on page load, fetch these things
+        // dispatch({ type: 'SET_SELECTED_NAME'})
         dispatch({ type: 'FETCH_USER_FLOWERS' });
+    
     }, []);
 
 
-    console.log(flowers);
+    // console.log(flowers);
+    // console.log('selected flower is', selectedFlower);
     return (
 
         <>

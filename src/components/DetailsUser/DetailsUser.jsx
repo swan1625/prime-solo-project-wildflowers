@@ -112,13 +112,13 @@ function userDetailsPage({ item }) {
 
     return (
         <>
-            <p> Notes: {selectedFlower.notes}    </p>
-            <p> Nearest City: {selectedFlower.nearest_city}  </p>
+
             <img src={selectedFlower.uploaded_image} />
-            {/* <button onClick={handleDelete}> Delete from Bouquet </button> */}
+            <p> Notes: {selectedFlower.notes}    </p>
+            <p> Nearest City: {selectedFlower.nearest_city} </p>
             <Button color="error" variant="contained" onClick={handleDelete}>Compost Flower</Button>
-            {/* <button onClick={handleEdit}>Edit Notes</button> */}
             <Button variant="contained" onClick={handleOpen}>Edit Notes</Button>
+
 
             <Modal
                 open={open}

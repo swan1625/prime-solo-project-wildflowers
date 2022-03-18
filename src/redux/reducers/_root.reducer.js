@@ -6,6 +6,7 @@ import selectedFlower from './flowerlistdetail.reducer';
 import userImages from './userImages.reducer';
 import userSelectedFlower from './userflowerlistdetail.reducer'
 import editNotes from './editnotes.reducer'
+import getName from './getname.reducer'
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
 // This is imported in index.js as rootSaga
@@ -19,7 +20,8 @@ const rootReducer = combineReducers({
   selectedFlower, // selected flower in total list 
   userImages, 
   userSelectedFlower,
-  editNotes
+  editNotes, 
+  getName
 });
 
 export default rootReducer;
