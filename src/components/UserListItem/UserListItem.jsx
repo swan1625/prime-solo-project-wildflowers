@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
+import './UserListItem.css'
 
 function userFlowerListItem({ item }) {
 
-
+  
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -18,12 +19,15 @@ function userFlowerListItem({ item }) {
   }
 
   return (
-
-    <div key={item.id} onClick={() => handleClick(item)}>
+    
+    <div class="imagediv" key={item.id} onClick={() => handleClick(item)}>
       <h3>{item.notes}</h3>
       {/* <img src ={item.image_path} /> */}
+    
       <img src={item.uploaded_image} />
+  
     </div>
+
   )
 
 }

@@ -3,11 +3,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   margin: 0 0 30px;
-  background-color: #a77ba7;
+  background-color: #22031F;
   overflow: hidden;
 }
+
+.title{
+  color: rgb(134, 152, 168);
+  text-align: center;
+  background-color: #22031F;
+  
+}
+
+
 
 .nav a {
   text-decoration: none;
@@ -24,7 +32,7 @@
 .navLink {
   display: inline-block;
   color: #f2f2f2;
-  background-color: #00acb0;
+  background-color: #CC76A1;
   text-align: center;
   padding: 24px 10px;
   text-decoration: none;
@@ -38,5 +46,5 @@
 }
 
 .navLink:hover {
-  background-color: #008183;
+  background-color: #983F6B;
 }

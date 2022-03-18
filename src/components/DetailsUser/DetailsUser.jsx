@@ -79,31 +79,31 @@ function userDetailsPage({ item }) {
 
     function handleChange(event) {
         console.log('in handle change', event.target.value)
-        dispatch({ 
-                    type: 'EDIT_ONCHANGE', 
-                    payload: { property: 'notes', value: event.target.value }
-                });
-    
-      }
+        dispatch({
+            type: 'EDIT_ONCHANGE',
+            payload: { property: 'notes', value: event.target.value }
+        });
+
+    }
 
 
     function handleEdit(event) {
         event.preventDefault();
         console.log('edit notes is', editNotes);
-    
+
         axios.put(`/edit/${selectedFlower.id}`, editNotes)
-            .then( response => {
+            .then(response => {
                 // clean up reducer data            
                 dispatch({ type: 'EDIT_CLEAR' });
-    
+
                 // refresh will happen with useEffect on Home
-                history.push('/detailsboquet/{selectedFlower.id}'); // back to list
+                history.push('/userlist'); // back to list
             })
             .catch(error => {
                 console.log('error on PUT: ', error);
             })
-        
-      };
+
+    };
 
 
     useEffect(() => {
@@ -132,10 +132,10 @@ function userDetailsPage({ item }) {
                         Edit Your Notes
                     </Typography>
                     <TextField sx={textField} multiline={true}
-                        rows={10} 
+                        rows={10}
                         onChange={(event) => handleChange(event)}
                         defaultValue={selectedFlower.notes}
-                        />
+                    />
                     <Button onClick={handleEdit}> Submit Change </Button>
                     <Button onClick={handleClose}> Cancel </Button>
                 </Box>

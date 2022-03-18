@@ -8,10 +8,13 @@ function Nav() {
   const user = useSelector((store) => store.user);
 
   return (
+    <div>
+    <div className="title">
+    <Link to="/home">
+      <h2 className="nav-title"> 🌷 Pic Some Flowers 🌻 </h2>
+    </Link>
+    </div>
     <div className="nav">
-      <Link to="/home">
-        <h2 className="nav-title">Pic Some Flowers</h2>
-      </Link>
       <div>
         {/* If no user is logged in, show these links */}
         {!user.id && (
@@ -24,15 +27,15 @@ function Nav() {
         {/* If a user is logged in, show these links */}
         {user.id && (
           <>
-            <Link className="navLink" to="/user">
+            {/* <Link className="navLink" to="/user">
               Home
-            </Link>
+            </Link> */}
 
             <Link className="navLink" to="/info">
-              Info Page
+              Info
             </Link>
             <Link className="navLink" to='/flowerlist'>
-              Flower List!
+              Flower Index
             </Link>
             <Link className="navLink" to='/userlist'>
               Digital Bouquet!
@@ -50,6 +53,7 @@ function Nav() {
 
 
       </div>
+    </div>
     </div>
   );
 }

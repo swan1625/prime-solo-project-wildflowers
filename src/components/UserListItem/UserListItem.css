@@ -1,0 +1,26 @@
+img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 280px;
+  }
+  
+  img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+  }
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+  .imagediv {
+
+    font-family: 'Indie Flower';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #ECB8C5;
+    padding: 10px;
+    border-radius: 50px;
+  }
