@@ -12,6 +12,7 @@ const userRouter = require('./routes/user.router');
 const flowerList = require('./routes/template.router');
 const userList = require('./routes/userlist.router')
 const deleteRouter = require('./routes/delete.router')
+const editRouter = require('./routes/edit.router')
 // Body parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -28,6 +29,8 @@ app.use('/api/user', userRouter);
 app.use('/flowers', flowerList);
 app.use('/userlist', userList);
 app.use('/delete', deleteRouter);
+app.use('/edit', editRouter)
+
 // Serve static files
 app.use(express.static('build'));
 

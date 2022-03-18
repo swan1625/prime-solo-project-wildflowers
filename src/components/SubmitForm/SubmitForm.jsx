@@ -67,11 +67,6 @@ console.log('flowerid is ', selectedFlower.id);
         <button type="submit">Add to Bouquet!</button>
       </form>
 
-
-
-
-
-
         </>
     )
     
