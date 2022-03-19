@@ -11,7 +11,7 @@ function userFlowerListItem({ item }) {
   const history = useHistory();
 
   function handleClick(item) {
-    console.log('in handle click');
+    console.log('in handle click', item);
     // console.log();
     dispatch({ type: 'SET_USER_SELECTED_FLOWER', payload: item })
     console.log('flower ID is ', item.id);
@@ -25,7 +25,7 @@ function userFlowerListItem({ item }) {
 }, []);
 
 
-console.log('selected flower is', selectedFlower);
+console.log('getname  is', selectedFlower);
   return (
     
     <div class="imagediv" key={item.id} onClick={() => handleClick(item)}>
@@ -33,7 +33,7 @@ console.log('selected flower is', selectedFlower);
       {/* <img src ={item.image_path} /> */}
     
       <img src={item.uploaded_image} />
-      <p></p>
+      <p>{selectedFlower}</p>
   
     </div>
 

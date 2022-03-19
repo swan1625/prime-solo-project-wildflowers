@@ -4,14 +4,21 @@ import { put, takeLatest } from 'redux-saga/effects';
 function* fetchSelectedName(action){
     // get selected name of flower
     try {
-        const flowerName = yield axios.get(`/getname/${action.payload}]`);
-        console.log('get all:', flowerName.data);
         console.log('action payload is ', `${action.payload}`);
-        yield put({ type: 'SET_SELECTED_NAME', payload: flowerName.data });
+        const flowerName = yield axios.get(`/getname/${action.payload}`);
+        console.log('get all:', flowerName);
+     
+        yield put({ type: 'SET_NAME', payload: flowerName.data });
     } catch (error) {
         console.log('get all selected flowername failed', error);
     }
 
 }
 
-export default fetchSelectedName; 
+function* flowerNameSaga() {
+    // yield takeLatest('SET_USER_SELECTED_FLOWER', fetchSelectedName)
+}
+
+
+
+export default flowerNameSaga; 

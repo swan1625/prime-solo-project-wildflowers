@@ -1,7 +1,7 @@
-const getName = (state = {}, action) => {
+const getName = (state = [], action) => {
 
     switch (action.type) {
-        case 'SET_SELECTED_NAME':
+        case 'SET_NAME':
             return action.payload;
         default:
             return state;

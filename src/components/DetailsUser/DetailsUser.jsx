@@ -40,16 +40,19 @@ const textField = {
 
 function userDetailsPage({ item }) {
 
-    const selectedFlower = useSelector(store => store.userSelectedFlower);
+ 
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
     const editNotes = useSelector((store) => store.editNotes);
+    const getName = useSelector(store => store.getName );
+    const selectedFlower = useSelector(store => store.userSelectedFlower);
 
-    const history = useHistory();
+
 
     const handleDelete = () => {
 
@@ -78,7 +81,7 @@ function userDetailsPage({ item }) {
     }
 
     function handleChange(event) {
-        console.log('in handle change', event.target.value)
+        // console.log('in handle change', event.target.value)
         dispatch({
             type: 'EDIT_ONCHANGE',
             payload: { property: 'notes', value: event.target.value }
@@ -109,13 +112,14 @@ function userDetailsPage({ item }) {
     useEffect(() => {
         // 
     }, []);
-
+    console.log('name is', getName);
     return (
         <>
 
             <img src={selectedFlower.uploaded_image} />
             <p> Notes: {selectedFlower.notes}    </p>
             <p> Nearest City: {selectedFlower.nearest_city} </p>
+            {/* <p>{selectedFlower}</p> */}
             <Button color="error" variant="contained" onClick={handleDelete}>Compost Flower</Button>
             <Button variant="contained" onClick={handleOpen}>Edit Notes</Button>
 

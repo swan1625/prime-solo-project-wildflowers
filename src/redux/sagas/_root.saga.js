@@ -18,11 +18,12 @@ export default function* rootSaga() {
   yield all([
     loginSaga(), // login saga is now registered
     registrationSaga(),
+    fetchSelectedName(),
     userSaga(),
     flowerSaga(),
     imagesSaga(),
     userFlowerSaga(),
     deleteItemSaga(),
-    fetchSelectedName()
+    
   ]);
 }
