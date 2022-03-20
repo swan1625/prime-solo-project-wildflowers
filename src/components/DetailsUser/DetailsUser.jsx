@@ -36,8 +36,6 @@ const textField = {
 
 
 
-
-
 function userDetailsPage({ item }) {
 
  
@@ -108,18 +106,25 @@ function userDetailsPage({ item }) {
 
     };
 
-
     useEffect(() => {
-        // 
+        // on page load, fetch these things
+        dispatch({ type: 'SET_SELECTED_NAME', payload: selectedFlower.flower_id})
+    
     }, []);
-    console.log('name is', getName);
+    console.log('selctedflower is', selectedFlower);
+
+    console.log('getName lol is', getName)
     return (
         <>
+            <div> {getName.map(commonName => (
+                <div key={commonName}> {commonName.common_name} </div>
 
+            ))}  </div>
             <img src={selectedFlower.uploaded_image} />
             <p> Notes: {selectedFlower.notes}    </p>
             <p> Nearest City: {selectedFlower.nearest_city} </p>
-            {/* <p>{selectedFlower}</p> */}
+
+          
             <Button color="error" variant="contained" onClick={handleDelete}>Compost Flower</Button>
             <Button variant="contained" onClick={handleOpen}>Edit Notes</Button>
 

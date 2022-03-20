@@ -16,7 +16,7 @@ function* fetchSelectedName(action){
 }
 
 function* flowerNameSaga() {
-    // yield takeLatest('SET_USER_SELECTED_FLOWER', fetchSelectedName)
+    yield takeLatest('SET_SELECTED_NAME', fetchSelectedName)
 }
 
 
