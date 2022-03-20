@@ -109,7 +109,6 @@ function userDetailsPage({ item }) {
     useEffect(() => {
         // on page load, fetch these things
         dispatch({ type: 'SET_SELECTED_NAME', payload: selectedFlower.flower_id})
-    
     }, []);
     console.log('selctedflower is', selectedFlower);
 
@@ -117,10 +116,11 @@ function userDetailsPage({ item }) {
     return (
         <>
             <div> {getName.map(commonName => (
-                <div key={commonName}> {commonName.common_name} </div>
+                <div key={commonName}> {commonName.common_name}<br></br> {commonName.flower_size}  <img src={commonName.image_path} /> </div>
 
             ))}  </div>
             <img src={selectedFlower.uploaded_image} />
+           
             <p> Notes: {selectedFlower.notes}    </p>
             <p> Nearest City: {selectedFlower.nearest_city} </p>
 
