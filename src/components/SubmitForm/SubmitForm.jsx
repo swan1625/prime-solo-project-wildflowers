@@ -5,7 +5,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 
-
+// --------Material UI Imports----------
+import { Button, Typography } from '@mui/material';
+import Modal from '@mui/material/Modal';
+import { Box } from '@mui/system';
+import { TextField } from '@mui/material';
 
 
 
@@ -15,51 +19,51 @@ import { useHistory } from 'react-router-dom';
 
 function submitForm() {
 
-    const [city, setCity] = useState('');
-    const [notes, setNotes] = useState('');
-    const [imagePath, setImagePath] = useState('');
-    const [flowerid, setFlowerid] = useState('');
+  const [city, setCity] = useState('');
+  const [notes, setNotes] = useState('');
+  const [imagePath, setImagePath] = useState('');
+  const [flowerid, setFlowerid] = useState('');
 
-    const history = useHistory();
+  const history = useHistory();
 
 
 
-    const selectedFlower = useSelector(store => store.selectedFlower);
-    let flowerIds = selectedFlower.id; 
+  const selectedFlower = useSelector(store => store.selectedFlower);
+  let flowerIds = selectedFlower.id;
 
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(imagePath.name);
-        let flowerid = selectedFlower.id;
-        console.log('flower id is handle sub', flowerid);
-    
-        dispatch({type: 'ADD_USER_FLOWER', payload:{ imagePath, notes, city, flowerid } });
-        history.push(`/submitconfirm`);
-    
-      }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(imagePath.name);
+    let flowerid = selectedFlower.id;
+    console.log('flower id is handle sub', flowerid);
 
-    const setFlowerId = (e) => {
-      setFlowerid(selectedFlower.id)
-    }
-      useEffect(() => {
-        // on page load run setFlowerID 
-       setFlowerid();
-    }, []);
+    dispatch({ type: 'ADD_USER_FLOWER', payload: { imagePath, notes, city, flowerid } });
+    history.push(`/submitconfirm`);
 
-console.log('city is', city);
-console.log('flowerid is ', selectedFlower.id);
-    return (
-        <>
-        
-        <form onSubmit={handleSubmit} encType="multipart/form-data" >
+  }
+
+  const setFlowerId = (e) => {
+    setFlowerid(selectedFlower.id)
+  }
+  useEffect(() => {
+    // on page load run setFlowerID 
+    setFlowerid();
+  }, []);
+
+  console.log('city is', city);
+  console.log('flowerid is ', selectedFlower.id);
+  return (
+    <>
+<Box> 
+      <form onSubmit={handleSubmit} encType="multipart/form-data" >
         <input
           type="text"
           placeholder="Nearest City"
           onChange={(event) => setCity(event.target.value)}
         />
-                <input
+        <input
           type="text"
           placeholder="Notes"
           onChange={(event) => setNotes(event.target.value)}
@@ -70,13 +74,12 @@ console.log('flowerid is ', selectedFlower.id);
           placeholder="image"
           onChange={(event) => setImagePath(event.target.files[0])}
         />
-
         <button type="submit">Add to Bouquet!</button>
       </form>
+      </Box>
+    </>
+  )
 
-        </>
-    )
-    
 }
 
 export default submitForm;

@@ -15,7 +15,7 @@
   color: white;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 23px;
+  font-size: 29px;
   align-items: center;
   display: block;
 }
@@ -36,9 +36,9 @@
 }
 
 /* Style the active link (or home/logo) */
-@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
 .active {
-  font-family: 'Monoton', cursive;
+  font-family: 'Bungee Shade', cursive;  
   background-color: #22031F;
   color: rgb(128, 83, 83);
   align-items: center;

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import FlowerListItem from '../FlowerListItem/FlowerListItem';
+import './FlowerList.css'
 
 
 // ---------MATERIAL UI STUFF-----
@@ -53,7 +54,7 @@ console.log('flowers is', flowers);
 console.log('color is',color);
 
     return (
-<>
+<div>
 
 <Box sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
@@ -77,7 +78,9 @@ console.log('color is',color);
 
 
         
-        <div>
+        <div className='whatever'
+            style={{backgroundColor: '#7FD1B9'}}
+        >
         {filteredList.map((item, i) => {
                 return (
                     <FlowerListItem key={i} item={item} />
@@ -86,7 +89,7 @@ console.log('color is',color);
 
         </div>
 
-        </>
+        </div>
     )
 }
 
