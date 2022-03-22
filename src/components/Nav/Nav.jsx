@@ -20,7 +20,7 @@ function Nav() {
 <>   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
 
     <div class="topnav">
-    <a href="#home" class="active">🌻 Pic Some Flowers 🌷</a>
+    <a href="#home" class="active">🌻 Pic  Some  Flowers 🌷</a>
     {/* <!-- Navigation links (hidden by default) --> */}
     <div id="myLinks">
       <a href="#flowerlist" >Flower List</a>
@@ -28,7 +28,6 @@ function Nav() {
       <a href="#about">About</a>
       <div>  <LogOutButton className="navLink" /> </div> 
     </div>
-    {/* <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links --> */}
     <a href="javascript:void(0);" class="icon" onClick={myFunction}>
       <i class="fa fa-bars"></i>
     </a>

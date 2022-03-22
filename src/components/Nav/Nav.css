@@ -15,13 +15,14 @@
   color: white;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 23px;
+  align-items: center;
   display: block;
 }
 
 /* Style the hamburger menu */
 .topnav a.icon {
-  background: black;
+  background: #22031F;
   display: block;
   position: absolute;
   right: 0;
@@ -30,12 +31,15 @@
 
 /* Add a grey background color on mouse-over */
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: rgb(108, 72, 122);
   color: black;
 }
 
 /* Style the active link (or home/logo) */
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
 .active {
+  font-family: 'Monoton', cursive;
   background-color: #22031F;
-  color: rgb(192, 156, 156);
+  color: rgb(128, 83, 83);
+  align-items: center;
 }

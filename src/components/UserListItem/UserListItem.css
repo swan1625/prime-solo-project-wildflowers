@@ -10,7 +10,7 @@ img {
   }
 
 
-  @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+  /* @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
   .imagediv {
 
     font-family: 'Indie Flower';
@@ -23,4 +23,31 @@ img {
     background-color: #ECB8C5;
     padding: 10px;
     border-radius: 50px;
-  }
+  } */
+
+
+  /* .imageDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+  } */
+  .card {
+    width: 93%;
+    background-color: rgb(235, 228, 207);
+    margin: 3%;
+    border: 2px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+.card-txt {
+  font-family: 'Patrick Hand', cursive;
+    text-align: center;
+    font-size: x-large;
+    padding: 10px;
+}

@@ -22,6 +22,7 @@ function flowerList(){
 
     const handleChange = (event) => {
       setColor(event.target.value);
+      dispatch({type: 'SEARCH_COLOR', payload: color})
     };
 
     useEffect(() => {
@@ -30,6 +31,7 @@ function flowerList(){
     }, []);
 
 console.log(flowers);
+console.log('color is',color);
     return (
 <>
 
@@ -43,11 +45,11 @@ console.log(flowers);
           label="Flowers By Color"
           onChange={handleChange}
         >
-          <MenuItem value={10}>Red Flowers ❤️</MenuItem>
-          <MenuItem value={20}>Blue Flowers 💙 </MenuItem>
-          <MenuItem value={40}>Pink Flowers 💓 </MenuItem>
-          <MenuItem value={50}>Orange Flowers 🧡</MenuItem>
-          <MenuItem value={60}>White Flowers 🤍</MenuItem>
+          <MenuItem value={'Red'}>Red Flowers ❤️</MenuItem>
+          <MenuItem value={'Blue'}>Blue Flowers 💙 </MenuItem>
+          <MenuItem value={'Pink'}>Pink/Purple Flowers 💜💓</MenuItem>
+          <MenuItem value={'Orange'}>Orange Flowers 🧡</MenuItem>
+          <MenuItem value={'White'}>White Flowers 🤍</MenuItem>
         </Select>
       </FormControl>
     </Box>

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 function flowerListItem({item}) {
-    console.log('item id is', item.id);
+
 
 
     const dispatch = useDispatch();
@@ -15,8 +15,7 @@ function flowerListItem({item}) {
         history.push(`/details/${item.id}`);
       }
 
-
-console.log('item is', item);
+ 
     return (
         <div className='flowerItemContainer' key={item.id} onClick={() => handleClick(item)} >
             <h3>{item.common_name}</h3>
