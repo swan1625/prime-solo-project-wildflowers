@@ -44,10 +44,10 @@ function flowerList(){
     useEffect(() => {
         // on page load, fetch these things
   
-        // dispatch({ type: 'FETCH_FLOWERS' });
+        dispatch({ type: 'FETCH_FLOWERS' });
         let filteredData = filterByColor(flowers);
         SetFilteredList(filteredData);
-      
+      console.log('refresh');
     }, [color]);
 
 console.log('flowers is', flowers);
@@ -56,7 +56,7 @@ console.log('color is',color);
     return (
 <div>
 
-<Box sx={{ minWidth: 120 }}>
+<Box  sx={{ minWidth: 120, mt: 1.5 }}>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Flowers By Color</InputLabel>
         <Select
@@ -77,11 +77,11 @@ console.log('color is',color);
     </Box>
 
 
-        
+        <h2>Flower list </h2>
         <div className='whatever'
             style={{backgroundColor: '#7FD1B9'}}
         >
-        {filteredList.map((item, i) => {
+        {filteredList?.map((item, i) => {
                 return (
                     <FlowerListItem key={i} item={item} />
                 )

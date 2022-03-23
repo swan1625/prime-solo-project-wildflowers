@@ -18,8 +18,7 @@ function UserList(){
     }, []);
 
 
-    // console.log(flowers);
-    // console.log('selected flower is', selectedFlower);
+
     return (
 
         <>

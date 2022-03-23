@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { useHistory } from 'react-router-dom';
+import './SubmitForm.css'
 
 
 // --------Material UI Imports----------
@@ -11,8 +12,15 @@ import { Box } from '@mui/system';
 import { TextField } from '@mui/material';
 import FormControl from '@mui/material/FormControl';
 import Input from '@mui/material/Input';
+import { styled } from '@mui/material/styles';
+import Stack from '@mui/material/Stack';
+import { purple } from '@mui/material/colors';
 
+const ColorButton = styled(Button)(({ theme }) => ({
+  color: theme.palette.getContrastText(purple[500]),
+  backgroundColor: purple[500],
 
+}));
 
 
 
@@ -56,26 +64,44 @@ function submitForm() {
   console.log('flowerid is ', selectedFlower.id);
   return (
     <>
-<Box> 
-<form className="my-form" onSubmit={handleSubmit} encType="multipart/form-data" >
-        <Input
-          type="text"
-          placeholder="Nearest City"
-          onChange={(event) => setCity(event.target.value)}
-        />
-        <Input
-          type="text"
-          placeholder="Notes"
-          onChange={(event) => setNotes(event.target.value)}
-        />
-        <Input
-          type='file'
-          name='file'
-          placeholder="image"
-          onChange={(event) => setImagePath(event.target.files[0])}
-        />
-        <Button type="submit" className="my-form">Add to Bouquet!</Button>
-      </form>
+ 
+      <Box sx={{
+        m: "auto",
+        mt: 6,
+        width: 340,
+        height: 390,
+        backgroundColor: 'lightblue',
+      }}
+      >
+        <h3> Submit Your Flower </h3>
+             {/* <Typography sx={{textAlign: 'center',}}> Submit Your Flower </Typography> */}
+        <form sx={{alignItems: 'center'}} className="my-form" onSubmit={handleSubmit} encType="multipart/form-data" >
+          <TextField
+            sx={{ background: '#FFFDD0', mt: -1, ml:2.4, width: 300 }}
+            type="text"
+            placeholder="Nearest City"
+            onChange={(event) => setCity(event.target.value)}
+            fullWidth
+          />
+          <TextField
+            sx={{ background: '#FFFDD0', mt: 1.2, ml:2.4, width: 300,
+            height: 125 }}
+            multiline={true}
+            type="text"
+            rows={4}
+            placeholder="Notes"
+            onChange={(event) => setNotes(event.target.value)}
+            fullWidth
+          />
+          <Input
+            sx={{ background: '#FFFDD0', mt: 1.2, ml:2.1}}
+            type='file'
+            name='file'
+            placeholder="image"
+            onChange={(event) => setImagePath(event.target.files[0])}
+          />
+          <ColorButton sx={{ mt: 1.2, ml: 11 }} variant='contained' type="submit" className="my-form">Add to Bouquet!</ColorButton>
+        </form>
 
 
 
@@ -87,18 +113,7 @@ function submitForm() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-      {/* <form onSubmit={handleSubmit} encType="multipart/form-data" >
+        {/* <form onSubmit={handleSubmit} encType="multipart/form-data" >
         <input
           type="text"
           placeholder="Nearest City"
