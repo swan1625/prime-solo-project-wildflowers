@@ -6,11 +6,11 @@ import { useHistory } from 'react-router-dom';
 
 
 // --------Material UI Imports----------
-import { Button, Typography } from '@mui/material';
-import Modal from '@mui/material/Modal';
+import { Button, FormControlLabel, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import { TextField } from '@mui/material';
-
+import FormControl from '@mui/material/FormControl';
+import Input from '@mui/material/Input';
 
 
 
@@ -57,7 +57,48 @@ function submitForm() {
   return (
     <>
 <Box> 
-      <form onSubmit={handleSubmit} encType="multipart/form-data" >
+<form className="my-form" onSubmit={handleSubmit} encType="multipart/form-data" >
+        <Input
+          type="text"
+          placeholder="Nearest City"
+          onChange={(event) => setCity(event.target.value)}
+        />
+        <Input
+          type="text"
+          placeholder="Notes"
+          onChange={(event) => setNotes(event.target.value)}
+        />
+        <Input
+          type='file'
+          name='file'
+          placeholder="image"
+          onChange={(event) => setImagePath(event.target.files[0])}
+        />
+        <Button type="submit" className="my-form">Add to Bouquet!</Button>
+      </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      {/* <form onSubmit={handleSubmit} encType="multipart/form-data" >
         <input
           type="text"
           placeholder="Nearest City"
@@ -75,7 +116,7 @@ function submitForm() {
           onChange={(event) => setImagePath(event.target.files[0])}
         />
         <button type="submit">Add to Bouquet!</button>
-      </form>
+      </form> */}
       </Box>
     </>
   )

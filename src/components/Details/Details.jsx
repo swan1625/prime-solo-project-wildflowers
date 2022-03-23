@@ -39,6 +39,7 @@ function detailsPage(){
         <p> Height: {selectedFlower.flower_size} </p>
         <p> Genus: {selectedFlower.genus} </p>
         <p> Life Cycle: {selectedFlower.life_cycle}</p>
+        <p>Status: {selectedFlower.type}</p>
         <button onClick = {handleClick}> Back to Complete List </button>
         <button onClick = {handleMatchClick}> Think you have a Match? </button>
         
