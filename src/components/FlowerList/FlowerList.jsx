@@ -13,84 +13,84 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
 
-function flowerList(){
+function flowerList() {
 
-    const dispatch = useDispatch();
-    const flowers = useSelector(store => store.flowerList);
-
-
-    const [color, setColor] = useState('');
-    const [filteredList, SetFilteredList] = useState(flowers);
-
-   
-    const filterByColor = (filteredData) => {
-        console.log('this is filter list', filteredList );
-      if (!color){
-        return filteredData;
-      }
-      const filteredColor = filteredData.filter(
-        (flower) => flower.color === color
-      );
-      return filteredColor;
-    };
+  const dispatch = useDispatch();
+  const flowers = useSelector(store => store.flowerList);
 
 
-    const handleChange = (event) => {
-      setColor(event.target.value);
-      // filterByColor();
-      console.log('test sdffdfglowers', filteredList);
-    };
-
-    useEffect(() => {
-        // on page load, fetch these things
-  
-        dispatch({ type: 'FETCH_FLOWERS' });
-        let filteredData = filterByColor(flowers);
-        SetFilteredList(filteredData);
-      console.log('refresh');
-    }, [color]);
-
-console.log('flowers is', flowers);
-console.log('color is',color);
-
-    return (
-<div>
-
-<Box  sx={{ minWidth: 120, mt: 1.5 }}>
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Flowers By Color</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={color}
-          label="Flowers By Color"
-          onChange={handleChange}
-        >
-          <MenuItem value={'Red'}>Red Flowers ❤️</MenuItem>
-          <MenuItem value={'Blue'}>Blue Flowers 💙 </MenuItem>
-          <MenuItem value={'Purple'}>Pink/Purple Flowers 💜💓</MenuItem>
-          <MenuItem value={'Orange'}>Orange Flowers 🧡</MenuItem>
-          <MenuItem value={'White'}>White Flowers 🤍</MenuItem>
-          <MenuItem value={'Yellow'}>Yellow Flowers 💛</MenuItem>
-        </Select>
-      </FormControl>
-    </Box>
+  const [color, setColor] = useState('');
+  const [filteredList, SetFilteredList] = useState(flowers);
 
 
-        <h2>Flower list </h2>
-        <div className='whatever'
-            style={{backgroundColor: '#7FD1B9'}}
-        >
-        {filteredList?.map((item, i) => {
-                return (
-                    <FlowerListItem key={i} item={item} />
-                )
-            })}
+  const filterByColor = (filteredData) => {
+    console.log('this is filter list', filteredList);
+    if (!color) {
+      return filteredData;
+    }
+    const filteredColor = filteredData.filter(
+      (flower) => flower.color === color
+    );
+    return filteredColor;
+  };
 
+
+  const handleChange = (event) => {
+    setColor(event.target.value);
+    // filterByColor();
+    console.log('test sdffdfglowers', filteredList);
+  };
+
+  useEffect(() => {
+    // on page load, fetch these things
+
+    dispatch({ type: 'FETCH_FLOWERS' });
+    let filteredData = filterByColor(flowers);
+    SetFilteredList(filteredData);
+    console.log('refresh');
+  }, [color]);
+
+  console.log('flowers is', flowers);
+  console.log('color is', color);
+
+  return (
+    <div>
+
+      <Box sx={{ minWidth: 120, mt: 1.5 }}>
+        <FormControl fullWidth>
+          <InputLabel id="demo-simple-select-label">Flowers By Color</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={color}
+            label="Flowers By Color"
+            onChange={handleChange}
+          >
+            <MenuItem value={''}>All Flowers </MenuItem>
+            <MenuItem value={'Red'}>Red Flowers ❤️</MenuItem>
+            <MenuItem value={'Blue'}>Blue Flowers 💙 </MenuItem>
+            <MenuItem value={'Purple'}>Pink/Purple Flowers 💜💓</MenuItem>
+            <MenuItem value={'Orange'}>Orange Flowers 🧡</MenuItem>
+            <MenuItem value={'White'}>White Flowers 🤍</MenuItem>
+            <MenuItem value={'Yellow'}>Yellow Flowers 💛</MenuItem>
+          </Select>
+        </FormControl>
+      </Box>
+
+
+      <h2>Flower list </h2>
+      <div >
+        <div className='whatever'>
+          {filteredList.map((item, i) => {
+            return (
+              <FlowerListItem key={i} item={item} />
+            )
+          })}
         </div>
+      </div>
 
-        </div>
-    )
+    </div>
+  )
 }
 
 export default flowerList; 
