@@ -56,7 +56,9 @@ function flowerList() {
   return (
     <div>
 
-      <Box sx={{ minWidth: 120, mt: 1.5 }}>
+      <h1> Complete Flower Index </h1>
+
+      <Box sx={{ minWidth: 120, mt: 1.5, mb:2.5 }}>
         <FormControl fullWidth>
           <InputLabel id="demo-simple-select-label">Flowers By Color</InputLabel>
           <Select
@@ -78,7 +80,7 @@ function flowerList() {
       </Box>
 
 
-      <h2>Flower list </h2>
+
       <div >
         <div className='whatever'>
           {filteredList.map((item, i) => {

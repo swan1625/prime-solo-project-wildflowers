@@ -23,7 +23,7 @@ function Nav() {
     <a href="#home" class="active">🌻 Pic  Some  Flowers 🌷</a>
     {/* <!-- Navigation links (hidden by default) --> */}
     <div id="myLinks">
-      <a href="#flowerlist" >Flower List</a>
+      <a href="#flowerlist" >Flower Index</a>
       <a href="#userlist">Digital Bouquet</a>
       <a href="#about">About</a>
       <div>  <LogOutButton className="navLink" /> </div> 
