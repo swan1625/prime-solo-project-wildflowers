@@ -31,7 +31,7 @@ function detailsPage() {
     return (
         <div>
             <div className='details'>
-                <p style={{fontSize: 'xx-large'}}> <b>{selectedFlower.common_name} </b> </p>
+                <p className='title'> <b>{selectedFlower.common_name} </b> </p>
                 <img src={selectedFlower.image_path} />
                 <p> <b>Scientific Name: </b> {selectedFlower.scientific_name} </p>
                 <p><b> Color:  </b> {selectedFlower.color} </p>
