@@ -14,6 +14,7 @@ const userList = require('./routes/userlist.router');
 const deleteRouter = require('./routes/delete.router');
 const editRouter = require('./routes/edit.router');
 const getName = require('./routes/getname.router');
+const getTotal = require('./routes/totals.router');
 // Body parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -32,6 +33,7 @@ app.use('/userlist', userList);
 app.use('/delete', deleteRouter);
 app.use('/edit', editRouter);
 app.use('/getname', getName);
+app.use('/totals', getTotal);
 
 // Serve static files
 app.use(express.static('build'));

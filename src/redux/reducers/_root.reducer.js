@@ -7,6 +7,7 @@ import userImages from './userImages.reducer';
 import userSelectedFlower from './userflowerlistdetail.reducer'
 import editNotes from './editnotes.reducer'
 import getName from './getname.reducer'
+import scTotals from './totals.reducer';
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
 // This is imported in index.js as rootSaga
@@ -21,7 +22,8 @@ const rootReducer = combineReducers({
   userImages, 
   userSelectedFlower,
   editNotes, 
-  getName
+  getName,
+  scTotals
 });
 
 export default rootReducer;

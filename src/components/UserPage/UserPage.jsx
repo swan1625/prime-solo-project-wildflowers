@@ -8,23 +8,26 @@ function UserPage() {
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
   const totalFlowers = useSelector(store => store.userImages);
+  const scTotal = useSelector(store => store.scTotals);
+ 
 
 
   let total = Object.keys(totalFlowers).length;
+  let specialConcern = Object.keys(scTotal).length;
 
-
-  console.log('total is,', total);
+  console.log('sc total is,', scTotal);
 
   useEffect(() => {
     dispatch({ type: 'FETCH_FLOWERS' });
     dispatch({ type: 'FETCH_USER_FLOWERS' });
-    
+    dispatch({ type: 'FETCH_SC_FLOWERS' });
 }, []);
 
   return (
     <div className="container">
-      <h2>Welcome, {user.username}!</h2>
+      <h2>Hello {user.username}!</h2>
       <p> You've found {total}/50 flowers </p>
+      <p> You've found {specialConcern}/5 Special Concern Flowers </p>
       <LogOutButton className="btn" />
     </div>
   );
