@@ -27,7 +27,11 @@ function UserPage() {
     <div className="container">
       <h2>Hello {user.username}!</h2>
       <p> You've found {total}/50 flowers </p>
-      <p> You've found {specialConcern}/5 Special Concern Flowers </p>
+    <p> common boys/25 (Common) </p>
+      <p> {specialConcern}/5 Special Concern Flowers (Uncommon) </p>
+      <p> /5 Threatened Flowers (Rare) </p>
+      <p> /5 Endangered Flowers (Epic) </p>
+      <p> /10 Como Conservatory Flowers (Bonus) </p>
       <LogOutButton className="btn" />
     </div>
   );
