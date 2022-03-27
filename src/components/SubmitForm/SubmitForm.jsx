@@ -106,35 +106,6 @@ function submitForm() {
           <ColorButton sx={{ mt: 1.2, ml: 11 }} variant='contained' type="submit" className="my-form">Add to Bouquet!</ColorButton>
         </form>
 
-
-
-
-
-
-
-
-
-
-
-        {/* <form onSubmit={handleSubmit} encType="multipart/form-data" >
-        <input
-          type="text"
-          placeholder="Nearest City"
-          onChange={(event) => setCity(event.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Notes"
-          onChange={(event) => setNotes(event.target.value)}
-        />
-        <input
-          type='file'
-          name='file'
-          placeholder="image"
-          onChange={(event) => setImagePath(event.target.files[0])}
-        />
-        <button type="submit">Add to Bouquet!</button>
-      </form> */}
       </Box>
     </>
   )

@@ -28,11 +28,11 @@ function userFlowerListItem({ item }) {
 
 console.log('getname  is', userSelectedFlower.flower_id);
   return (
-    <div class="card" >
+    <div className="card" style={{ borderStyle: 'dashed', borderColor: '#a5c2af', marginBottom: '14px', backgroundColor: '#e2d3e8'}} >
     <div class="imagediv" key={item}  onClick={() => handleClick(item)}>
       <img width="100%" src={item.uploaded_image} />
       <div class="card-txt">
-            <p>{item.nearest_city}</p>
+            <p className='city'>{item.nearest_city}</p>
         </div>
       </div>
     </div>
