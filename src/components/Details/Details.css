@@ -3,10 +3,12 @@
     background-color: #DD9396;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Chicle&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
 .title{
-    font-family: 'Chicle', cursive;
+    font-family: 'Ubuntu Mono', monospace;
     font-size: 40px;
-    margin-bottom: 6px;
+    margin-bottom: 16px;
     margin-top: 32px;
+    padding-top: 18px;
+
 }

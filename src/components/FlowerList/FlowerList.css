@@ -2,8 +2,11 @@
     padding-top: 2px;
     margin-bottom: 2px;
 }
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Chicle&family=Contrail+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@700&display=swap');
 h1{
-    font-family: 'Contrail One', cursive;
+    font-family: 'Ubuntu Mono', monospace;
     text-align: center;
+    font-weight: bolder;
+    font-size: 32px;
+
 }

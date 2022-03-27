@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Chicle&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
 h3{
-    padding-top: 20px;
-    font-family: 'Chicle', cursive;
+    padding-top: 1px;
+    font-family: 'Ubuntu Mono', monospace;
     text-align: center;
-    font-size: 34px;
+    font-size: 35px;
+    font-weight: 400;
   
 }
