@@ -72,6 +72,8 @@ function submitForm() {
         width: 340,
         height: 390,
         backgroundColor: '#e2d3e8',
+        borderStyle: 'dashed',
+        borderColor: '#a5c2af'
       }}
       >
         <h3> Submit Your Flower </h3>

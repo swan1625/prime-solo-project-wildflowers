@@ -4,6 +4,16 @@ import { useHistory } from 'react-router-dom';
 import './SubmitConfirmation.css'
 
 
+import { Button, FormControlLabel, Typography } from '@mui/material';
+
+import { styled } from '@mui/material/styles';
+import Stack from '@mui/material/Stack';
+import { purple } from '@mui/material/colors';
+
+const ColorButton = styled(Button)(({ theme }) => ({
+    backgroundColor: '#2c0628',
+    color: 'white'
+  }));
 
 function submitConfirm() {
     const selectedFlower = useSelector(store => store.selectedFlower);
@@ -24,13 +34,15 @@ function submitConfirm() {
     console.log('selected floweradnrea', selectedFlower);
     return (
 
-        <div style={{ borderStyle: 'dashed', borderColor: '#a5c2af', marginTop: '24px', backgroundColor: '#e2d3e8'}}>
-       <p className='success'> Successful Upload!</p>  
+        <div style={{ borderStyle: 'dashed', borderColor: '#a5c2af', marginTop: '24px', paddingBottom:'20px', backgroundColor: '#e2d3e8', textAlign: 'center', }}>
+       <p className='success'> <b>Upload Successful! </b></p>  
         <img className='andreaFlower' src="https://res.cloudinary.com/dubyogkaz/image/upload/v1648328856/wildflowers/wvam0wnejl4zkuvsq4zw.png"></img>
-       <p className='picked'> You Pic(k)ed a <b> {selectedFlower.common_name} </b> </p>
-        
-        <button onClick={handleBouquetClick}> Check out bouquet </button>
-        <button onClick={handleListClick}> Back to Complete List </button>
+       <p className='picked'> You Pic(k)ed a <b> {selectedFlower.common_name} </b> </p> <br></br>
+       
+                <p><b>Check out your upload(s) in the Digital Bouquet</b></p>
+        <ColorButton onClick={handleBouquetClick}> Digital Bouquet </ColorButton><br></br>
+        <p><b>Or</b></p>
+        <ColorButton onClick={handleListClick}> Back to Flower Index </ColorButton>
         </div>
     )
 }

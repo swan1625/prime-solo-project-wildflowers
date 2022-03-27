@@ -3,7 +3,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import './FlowerListItem.css'
 
-import { Box } from '@mui/system';
+import { Button, FormControlLabel, Typography } from '@mui/material';
+
+import { styled } from '@mui/material/styles';
+
+
+const ColorButton = styled(Button)(({ theme }) => ({
+    backgroundColor: '#2c0628',
+    color: 'white'
+  }));
 
 function flowerListItem({item}) {
 
@@ -24,6 +32,7 @@ function flowerListItem({item}) {
             <div class='flowerimgdiv'>
             <img src ={item.image_path} />
             </div>
+            <ColorButton  sx={{ml:15.5, mb:2}}> Plant Details </ColorButton>
         </div>
     )
 }

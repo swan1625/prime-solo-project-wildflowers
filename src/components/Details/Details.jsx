@@ -3,7 +3,23 @@ import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import './Details.css';
 
-import { Box, fontSize } from '@mui/system';
+// --------Material UI Imports----------
+import { Button, FormControlLabel, Typography } from '@mui/material';
+
+import { styled } from '@mui/material/styles';
+import Stack from '@mui/material/Stack';
+import { purple } from '@mui/material/colors';
+
+const ColorButton = styled(Button)(({ theme }) => ({
+  
+  backgroundColor: '#2c0628',
+  color: 'white'
+}));
+
+
+
+
+
 
 function detailsPage() {
 
@@ -40,9 +56,9 @@ function detailsPage() {
                 <p> <b>Life Cycle:</b> {selectedFlower.life_cycle}</p>
                 <p><b>Status:</b> {selectedFlower.type}</p><br></br>
                 <p><b>Think you Found This Flower?</b></p>
-                <button onClick={handleMatchClick}> Upload A Photo! </button><br></br>
+                <ColorButton onClick={handleMatchClick}> Upload A Photo! </ColorButton><br></br>
                 <p><b>Or</b></p>
-                <button onClick={handleClick}> Go Back to Flower Index </button>
+                <ColorButton  onClick={handleClick}> Go Back to Flower Index </ColorButton>
                 
 
             </div>
