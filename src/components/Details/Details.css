@@ -1,14 +1,25 @@
 .details{
     text-align: center;
-    background-color: #DD9396;
+    background-color: #e2d3e8;
+  
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
 .title{
     font-family: 'Ubuntu Mono', monospace;
-    font-size: 40px;
+    font-size: 43px;
     margin-bottom: 16px;
     margin-top: 32px;
     padding-top: 18px;
-
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 19px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+/* .bold{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+} */

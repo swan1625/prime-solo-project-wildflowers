@@ -24,13 +24,14 @@ function submitConfirm() {
     console.log('selected floweradnrea', selectedFlower);
     return (
 
-        <>
+        <div style={{ borderStyle: 'dashed', borderColor: '#a5c2af', marginTop: '24px', backgroundColor: '#e2d3e8'}}>
        <p className='success'> Successful Upload!</p>  
         <img className='andreaFlower' src="https://res.cloudinary.com/dubyogkaz/image/upload/v1648328856/wildflowers/wvam0wnejl4zkuvsq4zw.png"></img>
        <p className='picked'> You Pic(k)ed a <b> {selectedFlower.common_name} </b> </p>
-        <button onClick={handleListClick}> Back to Complete List </button>
+        
         <button onClick={handleBouquetClick}> Check out bouquet </button>
-        </>
+        <button onClick={handleListClick}> Back to Complete List </button>
+        </div>
     )
 }
 

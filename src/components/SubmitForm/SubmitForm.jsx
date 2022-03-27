@@ -17,8 +17,9 @@ import Stack from '@mui/material/Stack';
 import { purple } from '@mui/material/colors';
 
 const ColorButton = styled(Button)(({ theme }) => ({
-  color: theme.palette.getContrastText(purple[500]),
-  backgroundColor: purple[500],
+  color: theme.palette.getContrastText(purple[100]),
+  backgroundColor: '#2c0628',
+  color: 'white'
 
 }));
 
@@ -70,21 +71,21 @@ function submitForm() {
         mt: 6,
         width: 340,
         height: 390,
-        backgroundColor: 'lightblue',
+        backgroundColor: '#e2d3e8',
       }}
       >
         <h3> Submit Your Flower </h3>
              {/* <Typography sx={{textAlign: 'center',}}> Submit Your Flower </Typography> */}
         <form sx={{alignItems: 'center'}} className="my-form" onSubmit={handleSubmit} encType="multipart/form-data" >
           <TextField
-            sx={{ background: '#FFFDD0', mt: -1, ml:2.4, width: 300 }}
+            sx={{ background: '#e3e3e3', mt: -1, ml:2.4, width: 300 }}
             type="text"
             placeholder="Nearest City"
             onChange={(event) => setCity(event.target.value)}
             fullWidth
           />
           <TextField
-            sx={{ background: '#FFFDD0', mt: 1.2, ml:2.4, width: 300,
+            sx={{ background: '#e3e3e3', mt: 1.2, ml:2.4, width: 300,
             height: 125 }}
             multiline={true}
             type="text"
@@ -94,7 +95,7 @@ function submitForm() {
             fullWidth
           />
           <Input
-            sx={{ background: '#FFFDD0', mt: 1.2, ml:2.1}}
+            sx={{ background: '#e3e3e3', mt: 1.2, ml:2.1}}
             type='file'
             name='file'
             placeholder="image"

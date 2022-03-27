@@ -19,7 +19,7 @@ function flowerListItem({item}) {
       }
   
     return (
-        <div style={{ borderStyle: 'dashed', marginBottom: '14px', backgroundColor: '#F2B7C6'}} className='flowerItemContainer' key={item.id} onClick={() => handleClick(item)} >
+        <div style={{ borderStyle: 'dashed', borderColor: '#a5c2af', marginBottom: '14px', backgroundColor: '#e2d3e8'}} className='flowerItemContainer' key={item.id} onClick={() => handleClick(item)} >
             <h3>{item.common_name}</h3>
             <div class='flowerimgdiv'>
             <img src ={item.image_path} />

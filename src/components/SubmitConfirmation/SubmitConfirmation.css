@@ -6,11 +6,15 @@
     margin-right: auto;
 
 }
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
 .success{
-    font-size: xx-large;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 37px;
     text-align: center;
 }
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
 .picked{
-    font-size: x-large;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 33px;
     text-align: center;
 }
