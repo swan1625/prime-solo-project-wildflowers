@@ -1,11 +1,10 @@
-const scTotals = (state = [], action) => {
+const comoTotals = (state = [], action) => {
     switch (action.type) {
-      case 'SET_SC_FLOWERS':
+      case 'SET_COMO_FLOWERS':
         return action.payload;
       default:
         return state;
     }
   };
 
-  
-  export default scTotals; 
+  export default comoTotals; 

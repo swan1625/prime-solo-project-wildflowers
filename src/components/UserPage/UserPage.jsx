@@ -9,11 +9,15 @@ function UserPage() {
   const user = useSelector((store) => store.user);
   const totalFlowers = useSelector(store => store.userImages);
   const scTotal = useSelector(store => store.scTotals);
+  const commonTotal = useSelector(store => store.commonTotal)
+  const comoTotal = useSelector(store => store.comoTotals)
  
 
 
   let total = Object.keys(totalFlowers).length;
   let specialConcern = Object.keys(scTotal).length;
+  let common = Object.keys(commonTotal).length;
+  let como = Object.keys(comoTotal).length;
 
   console.log('sc total is,', scTotal);
 
@@ -21,17 +25,19 @@ function UserPage() {
     dispatch({ type: 'FETCH_FLOWERS' });
     dispatch({ type: 'FETCH_USER_FLOWERS' });
     dispatch({ type: 'FETCH_SC_FLOWERS' });
+    dispatch({ type: 'FETCH_COMMON_FLOWERS' });
+    dispatch({ type: 'FETCH_COMO_FLOWERS' })
 }, []);
 
   return (
-    <div className="container">
+    <div className="container" style={{ borderStyle: 'dashed', borderColor: '#a5c2af', marginTop: '35px', backgroundColor: '#e2d3e8',}}>
       <h2>Hello {user.username}!</h2>
       <p> You've found {total}/50 flowers </p>
-    <p> common boys/25 (Common) </p>
+    <p> {common}/25 Common Flowers (Common) </p>
       <p> {specialConcern}/5 Special Concern Flowers (Uncommon) </p>
-      <p> /5 Threatened Flowers (Rare) </p>
-      <p> /5 Endangered Flowers (Epic) </p>
-      <p> /10 Como Conservatory Flowers (Bonus) </p>
+      <p> 1/5 Threatened Flowers (Rare) </p>
+      <p> 0/5 Endangered Flowers (Epic) </p>
+      <p> {como}/10 Como Conservatory Flowers (Bonus) </p>
       <LogOutButton className="btn" />
     </div>
   );

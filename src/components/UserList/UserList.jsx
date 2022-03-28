@@ -14,7 +14,7 @@ function UserList(){
         // on page load, fetch these things
         // dispatch({ type: 'SET_SELECTED_NAME'})
         dispatch({ type: 'FETCH_USER_FLOWERS' });
-    
+        window.scrollTo(0, 0);
     }, []);
 
 
