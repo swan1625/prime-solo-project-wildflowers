@@ -28,26 +28,26 @@ function flowerList() {
     console.log('this is filter list', filteredList);
     if (!color && !type) {
       return filteredData;
-    } else if (color != '' && !type ){
-    const filteredColor = filteredData.filter(
-      (flower) =>  flower.color == color && type === "");
+    } else if (color != '' && !type) {
+      const filteredColor = filteredData.filter(
+        (flower) => flower.color == color && type === "");
       return filteredColor;
-    } else if (type != '' && !color ) {
+    } else if (type != '' && !color) {
       const filteredColor = filteredData.filter(
-        (flower) =>  flower.type == type && color === "");
-        return filteredColor;
-    } else if (type != '' && color != '' ){
+        (flower) => flower.type == type && color === "");
+      return filteredColor;
+    } else if (type != '' && color != '') {
       const filteredColor = filteredData.filter(
-        (flower) =>  flower.type == type && flower.color === color);
-        return filteredColor;
+        (flower) => flower.type == type && flower.color === color);
+      return filteredColor;
     }
-  
-  }
-  //   const filteredType = filteredData.filter(
-  //     (flower) =>  flower.type == type && color === "");
-  //   return filteredType;
-  // };
 
+  }
+  
+
+
+
+ 
 
   const handleTypeChange = (event) => {
     // setColor('');
@@ -62,11 +62,12 @@ function flowerList() {
     console.log('test sdffdfglowers', filteredList);
   };
 
-  useEffect(() => {
+  useEffect(() => { 
     // on page load, fetch these things
     dispatch({ type: 'FETCH_FLOWERS' });
     let filteredData = filterByColor(flowers);
     SetFilteredList(filteredData);
+    window.scrollTo(0, 0);
     console.log('refresh');
   }, [color, type]);
 
@@ -78,29 +79,32 @@ function flowerList() {
 
       <h1> Complete Flower Index </h1>
 
-      <Box sx={{ minWidth: 120, mt: 1.5, mb:2.5 }}>
-        <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">Flowers By Color</InputLabel>
+      <Box sx={{ minWidth: 120, mt: 1.5, mb: 2.5, ml:1.2,}}>
+        <FormControl style={{ minWidth: 350, }}>
+          <InputLabel id="demo-simple-select-label" variant="filled">Filter By Color</InputLabel>
           <Select
+            sx={{ backgroundColor: 'white', mb: 2, mt:1}}
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             value={color}
             label="Flowers By Color"
+            placeholder="Filter By Color"
             onChange={handleChange}
           >
-            <MenuItem value={''}>All Colors </MenuItem>
-            <MenuItem value={'Yellow'}>Yellow Flowers 💛</MenuItem>
+            <MenuItem  value={''}>All Colors</MenuItem>
+            <MenuItem  value={'Yellow'}>Yellow Flowers 💛</MenuItem>
             <MenuItem value={'Purple'}>Pink/Purple Flowers 💜💓</MenuItem>
             <MenuItem value={'Orange'}>Orange Flowers 🧡</MenuItem>
             <MenuItem value={'White'}>White Flowers 🤍</MenuItem>
             <MenuItem value={'Red'}>Red Flowers ❤️</MenuItem>
             <MenuItem value={'Blue'}>Blue Flowers 💙 </MenuItem>
           </Select>
-          
+
         </FormControl>
-        <FormControl fullWidth>
-          <InputLabel id="demo-simple">Flowers By Type</InputLabel>
+        <FormControl style={{ minWidth: 350, justifyContent: 'center'}}>
+          <InputLabel id="demo-simple" variant="filled">Filter By Type</InputLabel>
           <Select
+            sx={{ backgroundColor: 'white', mb: 2, mt:1}}
             labelId="demo"
             id="demo-simple"
             label="Flowers By Type"
@@ -108,13 +112,13 @@ function flowerList() {
             onChange={handleTypeChange}
           >
             <MenuItem value={''}>All Types </MenuItem>
-            <MenuItem value={'Common'}> Common Flowers </MenuItem>
+            <MenuItem value={'Common'}> Common Flowers (Common) </MenuItem>
             <MenuItem value={'Special Concern'}> Special Concern Flowers (Uncommon) </MenuItem>
             <MenuItem value={'Threatened'}> Threatened Flowers (Rare) </MenuItem>
             <MenuItem value={'Endangered'}> Endangered Flowers (Epic)</MenuItem>
             <MenuItem value={'Como'}> Como Flowers (Bonus) </MenuItem>
           </Select>
-          
+
         </FormControl>
       </Box>
 

@@ -11,9 +11,9 @@ import Stack from '@mui/material/Stack';
 import { purple } from '@mui/material/colors';
 
 const ColorButton = styled(Button)(({ theme }) => ({
-  
-  backgroundColor: '#2c0628',
-  color: 'white'
+
+    backgroundColor: '#2c0628',
+    color: 'white'
 }));
 
 
@@ -42,11 +42,12 @@ function detailsPage() {
     useEffect(() => {
         // 
         dispatch({ type: 'FETCH_SELECT_FLOWER', payload: selectedFlower.id })
+        window.scrollTo(0, 0);
     }, []);
 
     return (
         <div>
-            <div className='details' style={{ borderStyle: 'dashed', borderColor: '#a5c2af', marginTop: '27px'}} >
+            <div className='details' style={{ borderStyle: 'dashed', borderColor: '#a5c2af', marginTop: '27px' }} >
                 <p className='title'> <b>{selectedFlower.common_name} </b> </p>
                 <img src={selectedFlower.image_path} />
                 <p> <b>Scientific Name: </b> {selectedFlower.scientific_name} </p>
@@ -58,8 +59,8 @@ function detailsPage() {
                 <p><b>Think you Found This Flower?</b></p>
                 <ColorButton onClick={handleMatchClick}> Upload A Photo! </ColorButton><br></br>
                 <p><b>Or</b></p>
-                <ColorButton  onClick={handleClick}> Go Back to Flower Index </ColorButton>
-                
+                <ColorButton onClick={handleClick}> Go Back to Flower Index </ColorButton>
+
 
             </div>
         </div>
