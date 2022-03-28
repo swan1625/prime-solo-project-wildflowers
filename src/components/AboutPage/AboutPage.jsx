@@ -30,6 +30,12 @@ function AboutPage() {
         <p className="listItem" > <b>Github:</b> www.github.com/swan1625  </p>
         <p className="listItem" > <b>LinkedIn:</b> www.linkedin.com/in/andy-swanson-6609b4140/  </p>
       </div>
+      <div className="about-container">
+        <p className="listInfoHeading"> <b>Next Steps</b></p>
+        <p className="listItem" > • Add plantID API  </p>
+        <p className="listItem" > • Build up Database </p>
+      
+      </div>
       </div>
       
       </>
