@@ -21,6 +21,7 @@ function userFlowerListItem({ item }) {
   const dispatch = useDispatch();
   const history = useHistory();
 
+  // alowing us to get information to look at a single user flower
   function handleClick(item) {
     console.log('in handle click', item);
     // console.log();

@@ -66,7 +66,7 @@ function userDetailsPage({ item }) {
     const selectedFlower = useSelector(store => store.userSelectedFlower);
 
 
-
+// sweet alert popup that handles the delete function 
     const handleDelete = () => {
 
         Swal.fire({
@@ -93,6 +93,7 @@ function userDetailsPage({ item }) {
 
     }
 
+
     function handleChange(event) {
         // console.log('in handle change', event.target.value)
         dispatch({
@@ -102,7 +103,7 @@ function userDetailsPage({ item }) {
 
     }
 
-
+/// put, the ability to edit notes works aside with the function handle change as well
     function handleEdit(event) {
         event.preventDefault();
         console.log('edit notes is', editNotes);

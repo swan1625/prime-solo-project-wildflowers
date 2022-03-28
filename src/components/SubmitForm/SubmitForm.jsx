@@ -77,7 +77,7 @@ function submitForm() {
       }}
       >
         <h3> Submit Your Flower </h3>
-             {/* <Typography sx={{textAlign: 'center',}}> Submit Your Flower </Typography> */}
+            {/* enctype here is how files are allowed to be used, super important !  */}
         <form sx={{alignItems: 'center'}} className="my-form" onSubmit={handleSubmit} encType="multipart/form-data" >
           <TextField
             sx={{ background: '#e3e3e3', mt: -1, ml:2.4, width: 300 }}

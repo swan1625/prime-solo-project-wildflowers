@@ -23,7 +23,7 @@ function flowerList() {
   const [type, setType] = useState('');
   const [filteredList, SetFilteredList] = useState(flowers);
 
-
+// if else statement to allow filter by one, both, or neither of the dropdown menus 
   const filterByColor = (filteredData) => {
     console.log('this is filter list', filteredList);
     if (!color && !type) {
@@ -48,13 +48,13 @@ function flowerList() {
 
 
  
-
+//set flower type on change
   const handleTypeChange = (event) => {
     // setColor('');
     setType(event.target.value);
   };
 
-
+ /// set color to filter list by
   const handleChange = (event) => {
     // setType('');
     setColor(event.target.value);
