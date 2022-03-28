@@ -11,6 +11,9 @@ import Modal from '@mui/material/Modal';
 import { Box } from '@mui/system';
 import { TextField } from '@mui/material';
 import { Grid } from '@mui/material';
+import { IconButton } from '@mui/material';
+
+
 
 const style = {
     position: 'absolute',
@@ -18,7 +21,7 @@ const style = {
     left: '50%',
     transform: 'translate(-50%, -50%)',
     width: 250,
-    bgcolor: '#EBDEF0',
+    bgcolor: '#e2d3e8',
     border: '2px solid #000',
     boxShadow: 24,
     p: 4,
@@ -55,13 +58,13 @@ function userDetailsPage({ item }) {
     const handleDelete = () => {
 
         Swal.fire({
-            title: 'Are you sure you want to delete?',
+            title: 'Are you sure you want to delete this flower?',
             text: "This can't be undone!",
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'goodbye sweet flower =('
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Delete Flower'
         }).then((result) => {
             if (result.isConfirmed) {
                 Swal.fire(
@@ -112,20 +115,20 @@ function userDetailsPage({ item }) {
     }, []);
     console.log('selctedflower is', selectedFlower);
 
-    console.log('getName lol is', getName)
     return (
-        <>
+        <div style={{ borderStyle: 'dashed', borderColor: '#a5c2af', marginTop: '24px', backgroundColor: '#e2d3e8', textAlign: 'center'}}>
+           
             <div> {getName.map(commonName => (
-                <div key={commonName}> {commonName.common_name}<br></br> {commonName.flower_size}  <img src={commonName.image_path} /> </div>
+                <div key={commonName}> <p className='title'>{commonName.common_name}</p> <br></br> <p> <b> Uploaded Photo: </b></p> <img src={selectedFlower.uploaded_image} /> <p> <b> Index Photo: </b> </p> <img src={commonName.image_path} /> </div>
 
             ))}  </div>
-            <img src={selectedFlower.uploaded_image} />
+            
            
-            <p> Notes: {selectedFlower.notes}    </p>
-            <p> Nearest City: {selectedFlower.nearest_city} </p>
+            <p> <b> Notes: </b> {selectedFlower.notes}    </p>
+            <p><b> Nearest City:</b> {selectedFlower.nearest_city} </p>
 
           
-            <Button color="error" variant="contained" onClick={handleDelete}>Compost Flower</Button>
+            <Button  color="error" variant="contained" onClick={handleDelete}>Compost Flower</Button>
             <Button variant="contained" onClick={handleOpen}>Edit Notes</Button>
 
 
@@ -150,7 +153,7 @@ function userDetailsPage({ item }) {
                 </Box>
 
             </Modal>
-        </>
+        </div>
     )
 }
 
