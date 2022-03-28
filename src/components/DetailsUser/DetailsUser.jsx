@@ -14,8 +14,20 @@ import { Grid } from '@mui/material';
 import { IconButton } from '@mui/material';
 
 
+import { styled } from '@mui/material/styles';
+import Stack from '@mui/material/Stack';
+import { purple } from '@mui/material/colors';
+
+const ColorButton = styled(Button)(({ theme }) => ({
+
+    backgroundColor: '#2c0628',
+    color: 'white'
+}));
+
+
 
 const style = {
+    
     position: 'absolute',
     top: '50%',
     left: '50%',
@@ -128,8 +140,8 @@ function userDetailsPage({ item }) {
             <p><b> Nearest City:</b> {selectedFlower.nearest_city} </p>
 
           
-            <Button  color="error" variant="contained" onClick={handleDelete}>Compost Flower</Button>
-            <Button variant="contained" onClick={handleOpen}>Edit Notes</Button>
+            <Button sx={{mb:1}} color="error" variant="contained" onClick={handleDelete}>Compost Flower</Button>
+            <ColorButton variant="contained" sx={{ml:1, mb:1}} onClick={handleOpen}>Edit Notes</ColorButton>
 
 
             <Modal
@@ -148,8 +160,8 @@ function userDetailsPage({ item }) {
                         onChange={(event) => handleChange(event)}
                         defaultValue={selectedFlower.notes}
                     />
-                    <Button onClick={handleEdit}> Submit Change </Button>
-                    <Button onClick={handleClose}> Cancel </Button>
+                    <ColorButton style={{ mr:2}} onClick={handleEdit}> Submit Change </ColorButton>
+                    <Button  color="error" variant="contained" style={{ml:12}} onClick={handleClose}> Cancel </Button>
                 </Box>
 
             </Modal>

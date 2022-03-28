@@ -85,6 +85,7 @@ function submitForm() {
             placeholder="Nearest City"
             onChange={(event) => setCity(event.target.value)}
             fullWidth
+            autoComplete="off"
           />
           <TextField
             sx={{ background: '#e3e3e3', mt: 1.2, ml:2.4, width: 300,
@@ -95,6 +96,7 @@ function submitForm() {
             placeholder="Notes"
             onChange={(event) => setNotes(event.target.value)}
             fullWidth
+            autoComplete="off"
           />
           <Input
             sx={{ background: '#e3e3e3', mt: 1.2, ml:2.1}}
