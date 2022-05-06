@@ -67,6 +67,7 @@ function UserPage() {
       </div>
       <p className='totalflowers'> <b> You've found {total}/50 flowers </b> </p>
       <div style={{ textAlign: 'center' }}>
+        {/* /// need to finish routes below // */}
       <p >  <b> Subcategories: </b>   </p>
       <p> <b>{common}/25 </b>Common Flowers (Common) </p>
       <p> <b>{specialConcern}/5 </b> Special Concern Flowers (Uncommon) </p>
